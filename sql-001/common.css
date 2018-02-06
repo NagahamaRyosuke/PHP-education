@@ -1,0 +1,141 @@
+
+.contents{
+  margin:20px;
+  filter:alpha(opacity=80);
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+.jumbotron{
+  height:200px;
+  background: url("photo/balloon.gif") ;
+  background-size: cover;
+  filter:alpha(opacity=80);
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+.input{
+  min-width:300px;
+  line-height:30px;
+  border:1px solid #DDD;
+}
+
+textarea{
+  min-height:80px;
+  min-width:300px;
+  border:1px solid #DDD;
+}
+
+.del-btn{
+  text-align:right;
+}
+.clock{
+  text-align:right;
+}
+.form_conf form{
+  display: inline-block;
+  margin: 0 5px;
+}
+button{
+  cursor:pointer;
+}
+.del-btn:hover{
+  opacity:0.7;
+}
+
+.sentence{
+  margin:5px;
+  filter:alpha(opacity=80);
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+.sentence:hover{
+  background-color:#FEE;
+  filter:alpha(opacity=100);
+  -moz-opacity: 1;
+  opacity: 1;
+}
+#footer{
+  margin:20px 40px 20px 40px;
+  padding-bottom:100px;
+}
+.page-top
+{
+  display: none ;
+	margin: 0 ;
+	padding: 0 ;
+}
+
+.page-top p
+{
+	margin: 0 ;
+	padding: 0 ;
+
+	position: fixed ;
+	right: 16px ;
+	bottom: 16px ;
+}
+
+.move-page-top
+{
+	display: block ;
+	background: #D36015 ;
+	width: 50px ;
+	height: 50px ;
+
+	color: #fff ;
+	line-height: 50px ;
+	text-decoration: none ;
+	text-align: center ;
+
+	-webkit-transition:all 0.3s ;
+	-moz-transition:all 0.3s ;
+	transition:all 0.3s ;
+}
+
+/* .move-page-top:hover
+{
+	opacity: 0.85 ;
+} */
+
+.box{
+  display: none;
+  position: absolute;
+  padding: 16px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+}
+
+.drag-and-drop {
+    cursor: move;
+    position: absolute;
+    z-index: 1000;
+}
+
+.drag {
+    z-index: 1001;
+}
+
+#move-box{
+  display: block ;
+  background: #E0EA3A;
+  width: 250px ;
+  height: 20px ;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.advertisement{
+  margin: 10px;
+}
+
+.icon {
+  margin: 10px;
+}
