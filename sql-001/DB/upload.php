@@ -1,18 +1,5 @@
 <?php
-  date_default_timezone_set('Asia/Tokyo');
   session_start();
-  $UserID      = time();
-  $date    = date("Y/m/d G:i");
-
-  if(isset($_REQUEST["UserID"])){
-    $UserID    = $_REQUEST["UserID"];
-  }
-  if(isset($_REQUEST["name"])){
-    $name    = $_REQUEST["name"];
-  }
-  if(isset($_REQUEST["comment"])){
-    $comment    = $_REQUEST["comment"];
-  }
 
   require_once "db_setting.php";
   $dbh = new PDO('mysql:host='.$host.';dbname='.$database, $user, $pass);
@@ -25,11 +12,12 @@
     $stmt->execute();
   } else {
     // データベース書き込み
-    $stmt = $dbh -> prepare("INSERT INTO ".$table." (UserID,name,comment,date) VALUES (:UserID, :name, :comment, :date)");
+    $stmt = $dbh -> prepare("INSERT INTO ".$table." (UserID,name,comment,date,photo) VALUES (:UserID, :name, :comment, :date, :photo)");
     $stmt->bindValue(':UserID', $UserID, PDO::PARAM_INT);
     $stmt->bindParam(':name', $name, PDO::PARAM_STR);
     $stmt->bindParam(':comment', $comment, PDO::PARAM_STR);
     $stmt->bindParam(':date', $date, PDO::PARAM_STR);
+    $stmt->bindParam(':photo', $_SESSION["photo"], PDO::PARAM_STR);
     $stmt->execute();
   }
   // index.phpにリダイレクト

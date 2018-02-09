@@ -74,9 +74,8 @@ $(function(){
     var comment = document.getElementById('main-comment'+i).textContent;
     var result = window.prompt("編集内容を記入してください。", comment);
     if(result){
-       // alert("javascript-test");
       var form = document.createElement("form");
-      form.action = "upload.php";
+      form.action = "http://localhost/education/sql-001/DB/upload.php";
       form.method = "get";
 
       var send_comment = document.createElement("textarea");

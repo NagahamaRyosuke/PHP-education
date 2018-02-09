@@ -16,16 +16,10 @@
       </div>
       <div class="contents row">
             <div class="text-center" id="move-box">
-              <p class="text-center">ユーザー登録</p>
+              <p class="text-center">ログイン</p>
             </div>
             <br><br>
             <form method="post" action="http://localhost/education/sql-001/DB/new_user_upload.php" id="test_form" class="form-horizontal" name="send" onsubmit="return check()">
-              <div class="form-group">
-                <label class="col-sm-2 control-label" for="ID"> ID</label>
-                  <div class="col-sm-10">
-                    <input type="text" name="UserID" id="ID" class="input"/><sub>*半角英数字</sub>
-                  </div>
-              </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="n"> 名前</label>
                   <div class="col-sm-10">
@@ -38,18 +32,7 @@
                     <input type="text" name="password" id="p" class="input"/><sub>*半角英数字</sub>
                   </div>
               </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label" for="m"> メールアドレス</label>
-                  <div class="col-sm-10">
-                    <input type="text" name="mail" id="m" class="input"/>
-                  </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label" for="pho"> 画像URL</label>
-                  <div class="col-sm-10">
-                    <input type="text" name="photo" id="pho" class="input"/><sub>*開発用</sub>
-                  </div>
-              </div>
+              <input type="hidden" name="login" id="on" class="input"/>
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <button type="submit" class="btn btn-default">送信</button>
@@ -61,28 +44,18 @@
     // 未入力チェック
     function check(){
       var flag = 0;
-      var id = document.send.UserID.value;
       var name = document.send.name.value;
       var password = document.send.password.value;
-      var mail = document.send.mail.value;
 
       //未入力の時
-      if(id.length === 0){
-        flag = 1;
-      } else if(name.length === 0){
+      if(name.length === 0){
         flag = 1;
       } else if(password.length === 0){
-        flag = 1;
-      } else if(mail.length === 0){
         flag = 1;
       }
 
       //全角の時
-      if(id.match(/^[^\x01-\x7E\xA1-\xDF]+$/)){
-        flag = 2;
-      } else if(id.match(/^[^0-9]+$/)){
-        flag = 2;
-      } else if(password.match(/^[^\x01-\x7E\xA1-\xDF]+$/)){
+      if(password.match(/^[^\x01-\x7E\xA1-\xDF]+$/)){
         flag = 2;
       }
 

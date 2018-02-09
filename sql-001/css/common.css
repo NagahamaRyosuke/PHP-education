@@ -8,7 +8,7 @@
 
 .jumbotron{
   height:200px;
-  background: url("photo/balloon.gif") ;
+  background: url("../photo/balloon.gif") ;
   background-size: cover;
   filter:alpha(opacity=80);
   -moz-opacity: 0.8;
@@ -93,11 +93,6 @@ button{
 	-moz-transition:all 0.3s ;
 	transition:all 0.3s ;
 }
-
-/* .move-page-top:hover
-{
-	opacity: 0.85 ;
-} */
 
 .box{
   display: none;

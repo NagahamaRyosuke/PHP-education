@@ -1,5 +1,5 @@
 <?php
-    require_once "db_setting.php";
+    require_once "DB/db_setting.php";
     $_SESSION['url'] = $_SERVER["REQUEST_URI"];
     $num = 0;
     $data = array();
@@ -18,6 +18,7 @@
           $data[$num]["name"] = $row["name"];
           $data[$num]["comment"] = $row["comment"];
           $data[$num]["date"] = $row["date"];
+          $data[$num]["photo"] = $row["photo"];
           $num++;
         }
         unset($_SESSION['search']);
@@ -28,6 +29,7 @@
           $data[$num]["name"] = $row["name"];
           $data[$num]["comment"] = $row["comment"];
           $data[$num]["date"] = $row["date"];
+          $data[$num]["photo"] = $row["photo"];
           $num++;
         }
       }
@@ -51,7 +53,7 @@
       echo "<ul class='list-group sentence'>";
       echo "<li class='list-group-item'>";
       echo "<div class='col-sm-2'>";
-      echo "<img src='photo/php.jpg' width='70' height='70'>";
+      echo "<img src=".$data[$i]["photo"]." width='70' height='70'>";
       echo "</div>";
       //headの情報
       echo "<span class='name'><b>".$data[$i]["name"]."</b></span> : ";
@@ -61,7 +63,7 @@
       echo "<p class='comment' id='main-comment".$i."'>".$data[$i]["comment"]."</p>";
       //ボタンの処理
       echo "<div class='del-btn form_conf'>";
-      echo "<form method='post' action='delete.php' onsubmit='return delete_btn()'>";
+      echo "<form method='post' action='http://localhost/education/sql-001/DB/delete.php' onsubmit='return delete_btn()'>";
       echo "<input type='hidden' name='UserID' id='send_userID".$i."' value='".$data[$i]["UserID"]."'>";
       echo "<button type='submit' class='btn btn-default btn-xs' id='delete'>削除</button>";
       echo "</form>";
